@@ -58,12 +58,12 @@ class MavenDemo01ApplicationTests {
 //        }
 //        System.out.println(customProperties);
 //        System.out.println(dbConnector.config());
-
-        Article article=articleMapper.findById(1);
-        System.out.println("查询数据库ID为"+article+"Comment表的数据----"+article);
+int id=2;
+        Article article=articleMapper.findById(id);
+        System.out.println("查询数据库ID为"+id+"Comment表的数据----"+article);
         System.out.println("-----------------------------------");
-        Comment comment=commentMapper.findById(2);
-        System.out.println("查询数据库ID为"+comment+"的Comment表的数据----"+comment);
+        Comment comment=commentMapper.findById(id);
+        System.out.println("查询数据库ID为"+id+"的Comment表的数据----"+comment);
         System.out.println("-----------------------------------");
 
         //更新数据库字段
@@ -73,7 +73,7 @@ class MavenDemo01ApplicationTests {
         commentMapper.updateComment(comment);
         //插入数据库字段
 Comment comment1=new Comment();
-        comment1.setaId(2);
+
         comment1.setAuthor("aihjuha");
         comment1.setContent("dad");
         commentMapper.insertComment(comment1);
@@ -82,6 +82,7 @@ Comment comment1=new Comment();
 
 
         //删除数据库字段
-        commentMapper.deleteComment(6);
+        for (int i=6;i<30;i++)
+        commentMapper.deleteComment(i);
     }
 }
