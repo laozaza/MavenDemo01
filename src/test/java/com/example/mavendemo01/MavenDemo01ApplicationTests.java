@@ -22,22 +22,22 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 class MavenDemo01ApplicationTests {
-//    @Autowired
-//    controller con;
-//    @Autowired
-//    Student stu;
-//    @Autowired
-//    Person person;
-//    @Autowired
-//    User user;
-//    @Value("${student.id}")
-//    int id;
-//    @Autowired
-//    ApplicationContext applicationContext;
-//    @Autowired
-//    CustomProperties customProperties;
-//    @Autowired
-//    DBConnector dbConnector;
+    @Autowired
+    controller con;
+    @Autowired
+    Student stu;
+    @Autowired
+    Person person;
+    @Autowired
+    User user;
+    @Value("${student.id}")
+    int id;
+    @Autowired
+    ApplicationContext applicationContext;
+    @Autowired
+    CustomProperties customProperties;
+    @Autowired
+    DBConnector dbConnector;
     @Autowired
     private CommentMapper commentMapper;
     @Autowired
@@ -46,43 +46,40 @@ class MavenDemo01ApplicationTests {
     @Test
     void contextLoads() throws RuntimeException {
 //        String result = con.hello();
-//        System.out.println("单元测试返回" + con.hello());
-//        System.out.println("单元测试返回student" + stu);
-//        System.out.println("单元测试返回id数据---" + id);
-//        System.out.println("单元测试返回user数据--" + user);
-//        System.out.println("单元测试返回Person数据--" + person);
-//
 //        MyProperties myProperties = (MyProperties) applicationContext.getBean("xmlpropertoes");
 //        if (myProperties != null) {
 //            myProperties.getResult();
 //        }
 //        System.out.println(customProperties);
 //        System.out.println(dbConnector.config());
-int id=2;
-        Article article=articleMapper.findById(id);
-        System.out.println("查询数据库ID为"+id+"Comment表的数据----"+article);
+
+
+        //int id = 2;
+        Article article = articleMapper.findById(id);
+        System.out.println("查询数据库ID为" + id + "Comment表的数据----" + article);
         System.out.println("-----------------------------------");
-        Comment comment=commentMapper.findById(id);
-        System.out.println("查询数据库ID为"+id+"的Comment表的数据----"+comment);
+        Comment comment = commentMapper.findById(id);
+        System.out.println("查询数据库ID为" + id + "的Comment表的数据----" + comment);
         System.out.println("-----------------------------------");
-
-        //更新数据库字段
-        comment.setaId(1);
-        comment.setAuthor("aaaa");
-        comment.setContent("dad");
-        commentMapper.updateComment(comment);
-        //插入数据库字段
-Comment comment1=new Comment();
-
-        comment1.setAuthor("aihjuha");
-        comment1.setContent("dad");
-        commentMapper.insertComment(comment1);
-        System.out.println(comment1);
-        System.out.println("-----------------------------------");
-
-
-        //删除数据库字段
-        for (int i=6;i<30;i++)
-        commentMapper.deleteComment(i);
+//
+//        //更新数据库字段
+//        comment.setaId(1);
+//        comment.setAuthor("aaaa");
+//        comment.setContent("dad");
+//        commentMapper.updateComment(comment);
+//
+//        //插入数据库字段
+//        Comment comment1 = new Comment();
+//
+//        comment1.setAuthor("aihjuha");
+//        comment1.setContent("dad");
+//        commentMapper.insertComment(comment1);
+//        System.out.println(comment1);
+//        System.out.println("-----------------------------------");
+//
+//
+//        //删除数据库字段
+//        for (int i = 6; i < 30; i++)
+//            commentMapper.deleteComment(i);
     }
 }

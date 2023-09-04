@@ -8,8 +8,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
-@Component
-@ConfigurationProperties(prefix = "student")
+@Component//标识当前类是自定义配置类
+@ConfigurationProperties(prefix = "student")//指定配置文件注入属性
 public class Student {
 
     private int id;

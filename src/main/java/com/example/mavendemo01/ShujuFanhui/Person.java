@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 import java.nio.charset.Charset;
 
-@Component
+@Component//标识当前类是自定义配置类
 public class Person {
     @Value("${student.id}")
     private int id;

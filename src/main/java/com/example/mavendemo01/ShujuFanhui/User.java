@@ -11,7 +11,7 @@ import javax.validation.constraints.Email;
  * @author xs
  * @creat 2023/6/16-15:33
  **/
-@Component
+@Component//标识当前类是自定义配置类
 @ConfigurationProperties(prefix = "user")
 @Validated
 public class User {
