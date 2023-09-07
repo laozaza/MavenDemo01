@@ -8,7 +8,7 @@ import org.springframework.data.redis.core.index.Indexed;
 import java.util.List;
 
 @RedisHash("persons")
-public class Person {
+public class Person1 {
     @Id
     private String id;
     @Indexed
@@ -18,10 +18,10 @@ public class Person {
     private Address address;
     private List<JdbcTypeFamilyInformation.Family> familyList;
 
-    public Person() {
+    public Person1() {
     }
 
-    public Person(String id, String firstname, String lastname, Address address, List<JdbcTypeFamilyInformation.Family> familyList) {
+    public Person1(String id, String firstname, String lastname, Address address, List<JdbcTypeFamilyInformation.Family> familyList) {
         this.id = id;
         this.firstname = firstname;
         this.lastname = lastname;

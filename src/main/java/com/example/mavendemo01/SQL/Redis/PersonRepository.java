@@ -6,11 +6,11 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface PersonRepository extends CrudRepository<Person, String> {
-    List<Person> findByLastname(String lastname);
-    Page<Person> findPersonByLastname(String lastname, Pageable page);
-    List<Person> findByFirstnameAndLastname(String firstname, String lastname);
-    List<Person> findByAddress_City(String city);
-    List<Person> findByFamilyList_Username(String username);
+public interface PersonRepository extends CrudRepository<Person1, String> {
+    List<Person1> findByLastname(String lastname);
+    Page<Person1> findPersonByLastname(String lastname, Pageable page);
+    List<Person1> findByFirstnameAndLastname(String firstname, String lastname);
+    List<Person1> findByAddress_City(String city);
+    List<Person1> findByFamilyList_Username(String username);
 }
 
