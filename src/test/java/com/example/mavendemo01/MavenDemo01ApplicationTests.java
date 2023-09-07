@@ -5,32 +5,18 @@ import com.example.mavendemo01.SQL.Article;
 import com.example.mavendemo01.SQL.ArticleMapper;
 import com.example.mavendemo01.SQL.Comment;
 import com.example.mavendemo01.SQL.CommentMapper;
-import com.example.mavendemo01.SQL.Redis.PersonRepository;
-import com.example.mavendemo01.SQL.jpa.Discuss;
-import com.example.mavendemo01.SQL.jpa.DiscussRepository;
 import com.example.mavendemo01.ShujuFanhui.Person;
-import com.example.mavendemo01.SQL.Redis.Person1;
 import com.example.mavendemo01.ShujuFanhui.Student;
 import com.example.mavendemo01.ShujuFanhui.User;
 import com.example.mavendemo01.contorller.controller;
 import com.example.mavendemo01.coustom.CustomProperties;
-import com.example.mavendemo01.coustom.MyProperties;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.ExampleMatcher;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import java.util.List;
-import java.util.Optional;
-
-import static org.springframework.data.domain.ExampleMatcher.GenericPropertyMatchers.startsWith;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest

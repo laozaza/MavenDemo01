@@ -1,7 +1,5 @@
 package com.example.mavendemo01;
 
-import com.example.mavendemo01.SQL.Redis.Person1;
-import com.example.mavendemo01.SQL.Redis.PersonRepository;
 import com.example.mavendemo01.SQL.jpa.Discuss;
 import com.example.mavendemo01.SQL.jpa.DiscussRepository;
 import org.junit.jupiter.api.Test;

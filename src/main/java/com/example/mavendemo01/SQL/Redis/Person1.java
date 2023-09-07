@@ -7,7 +7,7 @@ import org.springframework.data.redis.core.index.Indexed;
 
 import java.util.List;
 
-@RedisHash("persons")
+@RedisHash("Persons")//指定操作实体类对象在Redis数据库中的存储空间
 public class Person1 {
     @Id
     private String id;
@@ -28,7 +28,6 @@ public class Person1 {
         this.address = address;
         this.familyList = familyList;
     }
-
     public String getId() {
         return id;
     }
