@@ -3,7 +3,6 @@ package com.example.mavendemo01.ShujuFanhui;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import java.nio.charset.Charset;
 
 @Component//标识当前类是自定义配置类
 public class Person {
@@ -13,7 +12,6 @@ public class Person {
     private String name;
     @Value("${student.age}")
     private int age;
-
 
     public int getId() {
         return id;
