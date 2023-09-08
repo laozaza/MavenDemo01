@@ -1,6 +1,5 @@
 package com.example.mavendemo01.SQL.Redis;
 
-import org.hibernate.type.descriptor.sql.JdbcTypeFamilyInformation;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 import org.springframework.data.redis.core.index.Indexed;
@@ -16,18 +15,8 @@ public class Person1 {
     @Indexed
     private String lastname;
     private Address address;
-    private List<JdbcTypeFamilyInformation.Family> familyList;
+    private List<Family> familyList;
 
-    public Person1() {
-    }
-
-    public Person1(String id, String firstname, String lastname, Address address, List<JdbcTypeFamilyInformation.Family> familyList) {
-        this.id = id;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.address = address;
-        this.familyList = familyList;
-    }
     public String getId() {
         return id;
     }
@@ -60,23 +49,32 @@ public class Person1 {
         this.address = address;
     }
 
-    public List<JdbcTypeFamilyInformation.Family> getFamilyList() {
+    public List<Family> getFamilyList() {
         return familyList;
     }
 
-    public void setFamilyList(List<JdbcTypeFamilyInformation.Family> familyList) {
+    public void setFamilyList(List<Family> familyList) {
         this.familyList = familyList;
     }
 
     @Override
     public String toString() {
-        return "Person{" +
+        return "Person1{" +
                 "id='" + id + '\'' +
                 ", firstname='" + firstname + '\'' +
                 ", lastname='" + lastname + '\'' +
                 ", address=" + address +
                 ", familyList=" + familyList +
                 '}';
+    }
+
+    public Person1() {
+    }
+
+    public Person1(String id, String firstname, String lastname) {
+        this.id = id;
+        this.firstname = firstname;
+        this.lastname = lastname;
     }
 }
 

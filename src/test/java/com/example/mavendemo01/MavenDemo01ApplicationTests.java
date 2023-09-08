@@ -56,7 +56,6 @@ class MavenDemo01ApplicationTests {
 //
         //SQL数据库
 //查询数据库字段
-        int id = 2;
         Article article = articleMapper.findById(id);
         System.out.println("查询数据库ID为" + id + "Comment表的数据----" + article);
         System.out.println("-----------------------------------");
