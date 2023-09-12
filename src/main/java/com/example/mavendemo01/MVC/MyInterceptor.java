@@ -1,13 +1,17 @@
 package com.example.mavendemo01.MVC;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.lang.Nullable;
 import org.springframework.web.servlet.HandlerInterceptor;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Calendar;
+
 /*
-* 自定义一个拦截器类
-* */
+ * 自定义一个拦截器类
+ * */
 @Configuration
 public class MyInterceptor implements HandlerInterceptor {
     @Override
@@ -19,12 +23,15 @@ public class MyInterceptor implements HandlerInterceptor {
             response.sendRedirect("/toLoginPage");
             return false;
         }
-        return true;}
+        return true;
+    }
+
     @Override
-    public void postHandle(HttpServletRequest request, HttpServletResponse response,
-                           Object handler, @Nullable ModelAndView modelAndView) throws Exception {
+    public void postHandle(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable ModelAndView modelAndView) throws Exception {
+        //向request域中存放当前年份用于页面动态展示
         request.setAttribute("currentYear", Calendar.getInstance().get(Calendar.YEAR));
     }
+
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse
             response, Object handler, @Nullable Exception ex) throws Exception {
