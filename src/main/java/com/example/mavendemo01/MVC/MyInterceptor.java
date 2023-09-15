@@ -18,11 +18,12 @@ public class MyInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         //用户请求/admin开头路径,判断用户是否登录
         String uri = request.getRequestURI();
+        request.setAttribute("currentYear", Calendar.getInstance().get(Calendar.YEAR));
         Object loginUser = request.getSession().getAttribute("loginUser");
         if (uri.startsWith("/admin") && null == loginUser) {
             response.sendRedirect("/login.html");
             return false;
-        }
+       }
         return true;
     }
 
@@ -32,7 +33,6 @@ public class MyInterceptor implements HandlerInterceptor {
         request.setAttribute("currentYear", Calendar.getInstance().get(Calendar.YEAR));
     }
     @Override
-    public void afterCompletion(HttpServletRequest request, HttpServletResponse
-            response, Object handler, @Nullable Exception ex) throws Exception {
+    public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, @Nullable Exception ex) throws Exception {
     }
 }
