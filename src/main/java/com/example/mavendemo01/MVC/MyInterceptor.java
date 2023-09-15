@@ -20,7 +20,7 @@ public class MyInterceptor implements HandlerInterceptor {
         String uri = request.getRequestURI();
         Object loginUser = request.getSession().getAttribute("loginUser");
         if (uri.startsWith("/admin") && null == loginUser) {
-            response.sendRedirect("/toLoginPage");
+            response.sendRedirect("/login.html");
             return false;
         }
         return true;
@@ -31,10 +31,8 @@ public class MyInterceptor implements HandlerInterceptor {
         //向request域中存放当前年份用于页面动态展示
         request.setAttribute("currentYear", Calendar.getInstance().get(Calendar.YEAR));
     }
-
     @Override
     public void afterCompletion(HttpServletRequest request, HttpServletResponse
             response, Object handler, @Nullable Exception ex) throws Exception {
     }
-
 }
